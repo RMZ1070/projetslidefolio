@@ -1,0 +1,49 @@
+{{-- resources/views/admin/dashboard.blade.php --}}
+
+@extends('adminlte::page')
+
+@section('title', 'Dashboard')
+
+@section('content_header')
+<h2> Editer About</h2>
+@stop
+
+@section('content')
+
+<div class="container">
+
+    <form action="{{route('about.update',$about)}}" method="post" enctype="multipart/form-data">
+        @csrf
+@method('put')
+        <div class="form-group text-darka ">
+            <label class="h3" for="titre">Titre :</label> <br>
+            <input value="{{$about->titre}}" type="text" name="titre"
+                class="form-control @error('titre') is-invalid @enderror" id="titre">
+            @error('titre')
+            <div class="alert alert-danger">{{  $message  }}</div>
+            @enderror
+        </div>
+        <div class="form-group text-darka ">
+            <label class="h3" for="titre">Texte :</label> <br>
+            <input value="{{$about->texte}}" type="text" name="texte"
+                class="form-control @error('texte') is-invalid @enderror" id="texte">
+            @error('texte')
+            <div class="alert alert-danger">{{  $message  }}</div>
+            @enderror
+        </div>
+        <div class="text-center">
+
+            <button type="submit" class="btn btn-outline-dark">Ajouter</button>
+        </div>
+
+    </form>
+</div>
+@stop
+
+@section('css')
+    <link rel="stylesheet" href="/css/admin_custom.css">
+@stop
+
+@section('js')
+    <script> console.log('Hi!'); </script>
+@stop

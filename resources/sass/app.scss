@@ -1,0 +1,30 @@
+// // Fonts
+// @import url('https://fonts.googleapis.com/css?family=Nunito');
+
+// // Variables
+// @import 'variables';
+
+// // Bootstrap
+// @import '~bootstrap/scss/bootstrap';
+
+
+
+@import './slidefolio.css';
+@import './bootstrap.css';
+
+
+
+
+#vertical{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 200px;    
+    p{
+        display: block;
+        font-size: 15px;
+        font-weight: bold;
+        max-width: 50%;
+    }
+}
